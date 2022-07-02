@@ -9,11 +9,12 @@
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
   </head>
   <body>
+    <audio id="mySound" src="sounds/hover2_quite.mp3"></audio>
     <div id="overlay"></div>
     <div class="container">
       <div class="navbar">
         <!-- <img src="images/logo.png" class="logo" /> -->
-        <img src="images/moon.png" class="night-mode">
+        <img src="images/moon.png" class="night-mode"  onclick="PlaySound('mySound')">
         <!-- <button id="toggle" class="but">toggle</button> -->
         <!-- <input type="checkbox" id="checkbox1" /><label
           id="label"
@@ -29,7 +30,7 @@
             <li><a href="#" onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')">VR Accessories</a></li>
             <li><a href="#" onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')">Media Remotes</a></li>
             <li><a href="#" onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')">Others</a></li>
-            <audio id="mySound" src="sounds/hover2_quite.mp3"></audio>
+
           </ul>
         </nav>
         <img src="images/menu.png" class="menu-icon" />
@@ -38,17 +39,17 @@
       <div class="row">
         <div class="col-1">
           <h2>PS4 V2<br />Dualshock 4</h2>
-          <h3>Wireless Controller for PlayStation 4</h3>
+          <h3 >Wireless Controller for PlayStation 4</h3>
           <p>(Compatible/Generic)</p>
           <h4>$420.69</h4>
           <button class="buyButton errorMessage" type="button">
-            Buy now <img src="images/arrow.png" />
+            Buy now <img src="images/arrow.png" style="margin-left: 5px;"/>
           </button>
         </div>
         <div class="col-2">
-          <img src="images/controller.png" class="controller" />
+          <img src="images/controller.png" class="controller" alt="PS4 Controller"/>
           <div class="color-box"></div>
-          <div class="add-btn errorMessage">
+          <div class="add-btn errorMessage" >
             <img src="images/add.png" alt="" />
             <p><small>Add to cart</small></p>
           </div>

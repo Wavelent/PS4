@@ -35,7 +35,7 @@ body {
   --check: 1;
 }
 
-input[type="checkbox"] {
+/* input[type="checkbox"] {
   height: 0px;
   width: 0px;
   visibility: hidden;
@@ -45,9 +45,7 @@ label {
   cursor: pointer;
   text-indent: -9999px;
   width: 50px; 
-  /* width: 200px;  */
   height: 25px;
-  /* height: 100px; */
   background: #0b0048;
   margin-left: 10px;
   display: block;
@@ -78,7 +76,7 @@ input:checked + label:after {
 
 label:active:after {
   width: 30px;
-}
+} */
 
 #overlay {
   position: fixed; /* Sit on top of the page content */
@@ -118,6 +116,17 @@ label:active:after {
   margin: 30px 0 0 10px;
   cursor: pointer;
   filter: invert(var(--check));
+  transition: .3s;
+  border-radius:50%;
+}
+.night-mode:hover{
+  transform: scale(1.1);
+  /* opacity: 0.666; */
+  box-shadow: 0 0 5px black;
+}
+.night-mode:active{
+  transform: scale(.9);
+  opacity: 0.8;
 }
 .menu-icon {
   width: 25px;
@@ -216,15 +225,13 @@ nav ul li a:hover {
   display: flex;
   align-items: center;
 }
-.colorbox:hover{
-    transform: scale(1.5)
-}
 .col-2 .controller {
   width: 90%;
+  transition:2s;
 }
 .col-2 .controller:hover{
-    transform: scale(1.01);
-    transition:1s;
+    transform: scale(1.02) translateY(-20px);
+    transition:2s;
 }
 .color-box {
   position: absolute;
