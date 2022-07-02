@@ -78,6 +78,7 @@ input:checked + label:after {
 label:active:after {
   width: 30px;
 }
+
 #overlay {
   position: fixed; /* Sit on top of the page content */
   display: none; /* Hidden by default */
@@ -90,7 +91,8 @@ label:active:after {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 2;
   pointer-events: none;
-  transition: 0.5s;
+  transition:0.5s;
+  backdrop-filter: grayscale(0.2) blur(5px);
 }
 .container {
   width: 100%;
@@ -115,6 +117,7 @@ label:active:after {
   cursor: pointer;
   display: none;
   filter: invert(var(--check));
+  z-index: 5;
 }
 nav {
   flex: 1;
