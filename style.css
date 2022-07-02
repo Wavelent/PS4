@@ -252,6 +252,7 @@ nav ul li a:hover {
     transform: rotate3d(1, 0, 0, 10deg) scale(2)
   }
 .social-links {
+  margin-top: 75px;
   filter: invert(var(--check));
   text-align: center;
 }
@@ -297,10 +298,10 @@ nav ul li a:hover {
   .col-1 {
     flex-basis: 100%;
   }
-  .col-2 h2 {
+  .col-1 h2 {
     font-size: 35px;
   }
-  .col-2 h3 {
+  .col-1 h3 {
     font-size: 15px;
   }
 }
