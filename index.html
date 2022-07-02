@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gaming Web Page</title>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+  </head>
+  <body>
+    <div id="overlay"></div>
+    <div class="container">
+      <div class="navbar">
+        <img src="images/logo.png" class="logo" />
+        <!-- <button id="toggle" class="but">toggle</button> -->
+        <input type="checkbox" id="checkbox1" /><label
+          id="label"
+          for="checkbox1"
+          onclick=""
+          >Toggle</label
+        >
+        <!-- <button id="refresh" class="but">refresh</button> -->
+        <nav>
+          <ul id="menuList">
+            <li><a href="#"onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')" >Game Controllers</a>
+            </li>
+            <li><a href="#" onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')">VR Accessories</a></li>
+            <li><a href="#" onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')">Media Remotes</a></li>
+            <li><a href="#" onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')">Others</a></li>
+            <audio id="mySound" src="sounds/hover2_quite.mp3"/>
+          </ul>
+        </nav>
+        <img src="images/menu.png" class="menu-icon" />
+      </div>
+
+      <div class="row">
+        <div class="col-1">
+          <h2>PS4 V2<br />Dualshock 4</h2>
+          <h3>Wireless Controller for PlayStation 4</h3>
+          <p>(Compatible/Generic)</p>
+          <h4>$420.69</h4>
+          <button class="buyButton errorMessage" type="button">
+            Buy now <img src="/images/arrow.png" />
+          </button>
+        </div>
+        <div class="col-2">
+          <img src="/images/controller.png" class="controller" />
+          <div class="color-box"></div>
+          <div class="add-btn errorMessage">
+            <img src="/images/add.png" alt="" />
+            <p><small>Add to cart</small></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="social-links">
+        <img src="images/fb.png" alt="" />
+        <img src="images/tw.png" alt="" />
+        <img src="images/ig.png" alt="" />
+      </div>
+    </div>
+
+    <script>
+      let menuList = document.getElementById("menuList");
+      let overlay = document.getElementById("overlay");
+      let row = document.querySelector(".row");
+      let errorMessage = document.querySelectorAll(".errorMessage");
+      menuList.style.maxHeight = "0px";
+
+      document.querySelector(".menu-icon").onclick = function () {
+        if (overlay.style.display == "block") {
+          row.style.margin = "100px 0";
+          menuList.style.maxHeight = "0px";
+          off();
+        } else {
+          row.style.margin = "150px 0";
+          menuList.style.maxHeight = "130px";
+          on();
+        }
+      };
+      function on() {
+        document.getElementById("overlay").style.display = "block";
+      }
+      function off() {
+        document.getElementById("overlay").style.display = "none";
+      }
+
+      for (let message of errorMessage) {
+        message.onclick = function () {
+          alert(
+            "We recieved too many orders. Please try again later, when we get new items to our storage"
+          );
+        };
+      }
+    </script>
+    <script src="playsound.js"></script>
+    <script src="nightTheme.js"></script>
+  </body>
+</html>
