@@ -21,6 +21,7 @@
 }
 body {
   background-color: var(--bg);
+  transition: 0.3s;
 }
 .dark {
   --bg: #1e1e1e;
@@ -35,49 +36,6 @@ body {
   --check: 1;
 }
 
-/* input[type="checkbox"] {
-  height: 0px;
-  width: 0px;
-  visibility: hidden;
-}
-
-label {
-  cursor: pointer;
-  text-indent: -9999px;
-  width: 50px; 
-  height: 25px;
-  background: #0b0048;
-  margin-left: 10px;
-  display: block;
-  border-radius: 100px;
-  position: relative;
-}
-
-label:after {
-  content: "";
-  position: absolute;
-  top: 1px;
-  left: 1px;
-  width: 23px;
-  height: 23px;
-  background: #fff;
-  border-radius: 90px;
-  transition: 0.3s;
-}
-
-input:checked + label {
-  background: #0b0048;
-}
-
-input:checked + label:after {
-  left: calc(100% - 1px);
-  transform: translateX(-100%);
-}
-
-label:active:after {
-  width: 30px;
-} */
-
 #overlay {
   position: fixed; /* Sit on top of the page content */
   display: none; /* Hidden by default */
@@ -90,7 +48,7 @@ label:active:after {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 2;
   pointer-events: none;
-  transition:0.5s;
+  transition: 0.5s; 
   backdrop-filter: grayscale(0.2) blur(5px);
 }
 .container {
@@ -111,21 +69,21 @@ label:active:after {
   cursor: pointer;
   margin: 30px 0;
 }
-.night-mode{
+.night-mode {
   width: 35px;
   margin: 30px 0 0 10px;
   cursor: pointer;
   filter: invert(var(--check));
-  transition: .3s;
-  border-radius:50%;
+  transition: 0.3s;
+  border-radius: 50%;
 }
-.night-mode:hover{
+.night-mode:hover {
   transform: scale(1.1);
   /* opacity: 0.666; */
   box-shadow: 0 0 5px black;
 }
-.night-mode:active{
-  transform: scale(.9);
+.night-mode:active {
+  transform: scale(0.9);
   opacity: 0.8;
 }
 .menu-icon {
@@ -197,7 +155,6 @@ nav ul li a:hover {
   color: var(--text-white);
 }
 .col-1 button {
-  letter-spacing: 2px;
   width: 140px;
   border: 0;
   padding: 12px 10px;
@@ -206,21 +163,22 @@ nav ul li a:hover {
   background: linear-gradient(to right, var(--but-one), var(--but-two));
   border-radius: 6px;
   cursor: pointer;
-  transition: width .2s;
+  transition: width 0.5s;
   transform-origin: left;
   opacity: 0.93;
+  animation: breathing 5s linear infinite normal;
 }
 .col-1 button img {
-  width: 30px;
+  width: 35px;
   display: none;
 }
 .col-1 button:hover img {
+  animation: breathing 5s linear infinite normal;
   display: block;
 }
 .col-1 button:hover {
-  box-shadow: 0 0 2px var(--text-white);
+  /* box-shadow: 0 0 2px var(--text-white); */
   width: 160px;
-  /* transform: scaleX(1.1); */
   opacity: 1;
   display: flex;
   align-items: center;
@@ -234,7 +192,7 @@ nav ul li a:hover {
   align-items: center;
 }
 .col-2 .controller {
-  animation: breathing 5s ease-out infinite normal;
+  animation: breathing 5s linear infinite normal;
   width: 90%;
   transition: transform 2s;
 }
@@ -265,16 +223,21 @@ nav ul li a:hover {
   opacity: 0.8;
 }
 .social-links img {
-  height: 12px;
+  height: 14px;
   margin: 20px;
   cursor: pointer;
-  transition:.5s;
+  transition: transform 0.3s;
 }
 .social-links img:hover {
-    transform: rotate3d(1, 0, 0, 10deg) scale(2)
-  }
+  transform: scale(1.5);
+}
+.social-links img:active{
+  transform: scale(0.9);
+  opacity: 0.8;
+}
+
 .social-links {
-  margin-top: 75px;
+  margin-top: 70px;
   filter: invert(var(--check));
   text-align: center;
 }
@@ -330,10 +293,10 @@ nav ul li a:hover {
 
 @keyframes slideInFromLeft {
   0% {
-      transform: translateX(-50%);
+    transform: translateX(-50%);
   }
-  55%{
-    transform:translateX(10%);
+  55% {
+    transform: translateX(10%);
   }
   100% {
     transform: translateX(0);
@@ -341,22 +304,22 @@ nav ul li a:hover {
 }
 @keyframes slideInFromRight {
   0% {
-      transform: translateX(500%);
+    transform: translateX(500%);
   }
   100% {
-      transform: translateX(0);
+    transform: translateX(0);
   }
 }
 @keyframes breathing {
   0% {
-    transform: scale(1);
+    transform: scale(1.03) ;
   }
 
   50% {
-    transform: scale(0.98);
-  }
+    transform: scale(0.98); 
+    }
 
   100% {
-    transform: scale(1);
+    transform: scale(1.03) ;
   }
 }
