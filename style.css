@@ -21,7 +21,7 @@
 }
 body {
   background-color: var(--bg);
-  transition: 0.5s;
+  transition: 0.3s;
 }
 .dark {
   --bg: #1e1e1e;
@@ -111,6 +111,15 @@ nav ul li a:hover {
   color: var(--hover);
   transition: 0.233s;
 }
+.rows{
+  position: relative;
+  display: flex;
+  /* width: 200vw; */
+  /* display: flex; */
+}
+
+
+
 .row {
   display: flex;
   justify-content: space-between;
