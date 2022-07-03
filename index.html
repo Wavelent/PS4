@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Playstation Accessories</title>
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <audio id="mySound" src="sounds/hover2_quite.mp3"></audio>
   </head>
   <body>
-    <audio id="mySound" src="sounds/hover2_quite.mp3"></audio>
     <div id="overlay"></div>
     <div class="container">
       <div class="navbar">
@@ -22,9 +22,11 @@
           <ul id="menuList">
             <li>
               <a
+                class="highlighted"
                 href="#"
                 onmouseover="PlaySound('mySound')"
                 onmouseout="StopSound('mySound')"
+                id="menuControllers"
                 >Game Controllers</a
               >
             </li>
@@ -33,6 +35,7 @@
                 href="#"
                 onmouseover="PlaySound('mySound')"
                 onmouseout="StopSound('mySound')"
+                id="menuVR"
                 >VR Accessories</a
               >
             </li>
@@ -41,15 +44,17 @@
                 href="#"
                 onmouseover="PlaySound('mySound')"
                 onmouseout="StopSound('mySound')"
+                id="menuRemotes"
                 >Media Remotes</a
-              >
+              ><div class="delitel"></div>
             </li>
             <li>
-              <a
+              <a 
                 href="#"
+                onclick=""
                 onmouseover="PlaySound('mySound')"
                 onmouseout="StopSound('mySound')"
-                >Others</a
+                >Support</a
               >
             </li>
           </ul>
@@ -111,7 +116,11 @@
             </button>
           </div>
           <div class="col-2">
-            <img src="images/psmove.png" class="controller" alt="PS4 Controller" />
+            <img
+              src="images/psmove.png"
+              class="controller"
+              alt="PS4 Controller"
+            />
             <div class="color-box"></div>
             <div class="add-btn nextButton">
               <img src="images/add.png" alt="" />
@@ -164,22 +173,67 @@
       }
       for (let nextBut of nextButton) {
         nextBut.onclick = function () {
-          if (document.getElementById("row2").style.display == "none" && document.getElementById("row3").style.display == "none") {
-            console.log("Next happened!");
-            document.getElementById("row1").style.display = "none";
-            document.getElementById("row2").style.display = "flex";
+          if (
+            document.getElementById("row2").style.display == "none" &&
             document.getElementById("row3").style.display == "none"
-          } else if (document.getElementById("row1").style.display == "none" && document.getElementById("row3").style.display == "none"){
-            document.getElementById("row1").style.display = "none";
-            document.getElementById("row2").style.display = "none";
-            document.getElementById("row3").style.display = "flex";
+          ) {
+            display2();
+          } else if (
+            document.getElementById("row1").style.display == "none" &&
+            document.getElementById("row3").style.display == "none"
+          ) {
+            display3();
           } else {
-            document.getElementById("row1").style.display = "flex";
-            document.getElementById("row2").style.display = "none";
-            document.getElementById("row3").style.display = "none";
+            display1();
           }
         };
       }
+
+      function display1() {
+        document.getElementById("row1").style.display = "flex";
+        document.getElementById("row2").style.display = "none";
+        document.getElementById("row3").style.display = "none";
+      }
+      function display2() {
+        document.getElementById("row1").style.display = "none";
+        document.getElementById("row2").style.display = "flex";
+        document.getElementById("row3").style.display == "none";
+      }
+      function display3() {
+        document.getElementById("row1").style.display = "none";
+        document.getElementById("row2").style.display = "none";
+        document.getElementById("row3").style.display = "flex";
+      }
+      
+
+      document.getElementById("menuControllers").onclick = function (){
+        console.log("succes 1")
+        display1();
+        if(!document.getElementById("menuControllers").classList.contains("highlighted"))
+        document.getElementById("menuControllers").classList.toggle("highlighted")
+        document.getElementById("menuVR").classList.remove("highlighted");
+        document.getElementById("menuRemotes").classList.remove("highlighted");
+      }
+      document.getElementById("menuVR").onclick = function (){
+        console.log("succes 2")
+        display2()
+        if (document.getElementById("row3").style.display == "flex"){
+          document.getElementById("row3").style.display = "none"
+        }
+        if(!document.getElementById("menuVR").classList.contains("highlighted"))
+        {document.getElementById("menuVR").classList.toggle("highlighted")
+        document.getElementById("menuControllers").classList.remove("highlighted");
+        document.getElementById("menuRemotes").classList.remove("highlighted");}
+      }
+      document.getElementById("menuRemotes").onclick = function (){
+        console.log("succes 3")
+        display3()
+        if(!document.getElementById("menuRemotes").classList.contains("highlighted"))
+        {document.getElementById("menuRemotes").classList.toggle("highlighted")
+        document.getElementById("menuControllers").classList.remove("highlighted");
+        document.getElementById("menuVR").classList.remove("highlighted");}
+      }
+      
     </script>
     <script src="playsound.js"></script>
     <script src="nightTheme.js"></script>

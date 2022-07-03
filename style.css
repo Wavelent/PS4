@@ -8,6 +8,7 @@
   --hover: #ff5ea2;
   --but-one: #fb5283;
   --but-two: #ff3527;
+  --grad-three: #ff469f;
   --h3: #707070;
   --p: #b7b7b7;
   --check: 0;
@@ -28,6 +29,7 @@ body {
   --text-white: #fff;
   --grad-one: #142136;
   --grad-two: #1c1e7d;
+  --grad-three: #4445a2;
   --hover: #978dc6;
   --but-one: #303948;
   --but-two: #272865;
@@ -107,8 +109,21 @@ nav ul li a {
   color: var(--text-white);
   font-size: 14px;
 }
+.highlighted {
+  color: var(--grad-three) !important;
+}
+.delitel{
+  position: relative;
+  display: inline-block;
+  left: 15px;
+  top: 3px;
+  width: 1.5px;
+  height: 15px;
+  border-radius: 5px;
+  background-color: var(--text-white);
+}
 nav ul li a:hover {
-  color: var(--hover);
+  color: var(--hover) !important;
   transition: 0.233s;
 }
 .rows{
