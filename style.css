@@ -21,7 +21,7 @@
 }
 body {
   background-color: var(--bg);
-  transition: 0.3s;
+  transition: 0.5s;
 }
 .dark {
   --bg: #1e1e1e;
