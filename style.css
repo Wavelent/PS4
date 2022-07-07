@@ -15,8 +15,8 @@
   --p: #b7b7b7;
   --check: 0;
   --fbCol: #3b5998;
-  --igCol: #c13584;
-  --twCol: #1d9bf0;
+  --igCol: #C13584;
+  --twCol: #1D9BF0;
 }
 * {
   margin: 0;
@@ -57,7 +57,7 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 2;
   pointer-events: none;
-  transition: 0.5s;
+  transition: 0.5s; 
   backdrop-filter: grayscale(0.2) blur(5px);
 }
 .container {
@@ -119,7 +119,7 @@ nav ul li a {
 .highlighted {
   color: var(--grad-three) !important;
 }
-.delitel {
+.delitel{
   position: relative;
   display: inline-block;
   left: 15px;
@@ -133,12 +133,14 @@ nav ul li a:hover {
   color: var(--hover) !important;
   transition: 0.233s;
 }
-.rows {
+.rows{
   position: relative;
   display: flex;
   /* width: 200vw; */
   /* display: flex; */
 }
+
+
 
 .row {
   display: flex;
@@ -258,18 +260,18 @@ nav ul li a:hover {
   transition: transform 0.3s;
 }
 
-.social-links img:nth-child(1):hover {
+.social-links img:nth-child(1):hover{
   transform: scale(1.5);
-  filter: invert();
+  /* filter: invert(); */
 }
-.social-links img:nth-child(2):hover {
-  transform: scale(1.5);
+.social-links img:nth-child(2):hover{
+  transform: scale(1.5)
 }
-.social-links img:nth-child(3):hover {
-  transform: scale(1.5);
+.social-links img:nth-child(3):hover{
+  transform: scale(1.5)
 }
 
-.social-links img:active {
+.social-links img:active{
   transform: scale(0.9);
   opacity: 0.8;
 }
@@ -282,11 +284,8 @@ nav ul li a:hover {
 @media only screen and (max-width: 700px) {
   nav ul {
     width: 100%;
-    background: linear-gradient(
-      to right,
-      rgba(var(--grad-one-rgba), 0.1),
-      rgba(var(--grad-two-rgba), 0.1)
-    );
+    background: linear-gradient(to right, rgba(var(--grad-one-rgba), 0.1),
+     rgba(var(--grad-two-rgba), 0.1));
     position: absolute;
     top: 75px;
     right: 0;
@@ -354,14 +353,14 @@ nav ul li a:hover {
 }
 @keyframes breathing {
   0% {
-    transform: scale(1.03);
+    transform: scale(1.03) ;
   }
 
   50% {
-    transform: scale(0.98);
-  }
+    transform: scale(0.98); 
+    }
 
   100% {
-    transform: scale(1.03);
+    transform: scale(1.03) ;
   }
 }
