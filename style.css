@@ -5,6 +5,8 @@
   --text-white: #000000;
   --grad-one: #ff469f;
   --grad-two: #ff6062;
+  --grad-one-rgba: 255, 70, 159;
+  --grad-two-rgba: 255, 97, 100;
   --hover: #ff5ea2;
   --but-one: #fb5283;
   --but-two: #ff3527;
@@ -12,6 +14,9 @@
   --h3: #707070;
   --p: #b7b7b7;
   --check: 0;
+  --fbCol: #3b5998;
+  --igCol: #c13584;
+  --twCol: #1d9bf0;
 }
 * {
   margin: 0;
@@ -29,6 +34,8 @@ body {
   --text-white: #fff;
   --grad-one: #142136;
   --grad-two: #1c1e7d;
+  --grad-one-rgba: 28, 30, 125;
+  --grad-two-rgba: 20, 33, 54;
   --grad-three: #4445a2;
   --hover: #978dc6;
   --but-one: #303948;
@@ -50,7 +57,7 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 2;
   pointer-events: none;
-  transition: 0.5s; 
+  transition: 0.5s;
   backdrop-filter: grayscale(0.2) blur(5px);
 }
 .container {
@@ -112,7 +119,7 @@ nav ul li a {
 .highlighted {
   color: var(--grad-three) !important;
 }
-.delitel{
+.delitel {
   position: relative;
   display: inline-block;
   left: 15px;
@@ -126,14 +133,12 @@ nav ul li a:hover {
   color: var(--hover) !important;
   transition: 0.233s;
 }
-.rows{
+.rows {
   position: relative;
   display: flex;
   /* width: 200vw; */
   /* display: flex; */
 }
-
-
 
 .row {
   display: flex;
@@ -252,10 +257,19 @@ nav ul li a:hover {
   cursor: pointer;
   transition: transform 0.3s;
 }
-.social-links img:hover {
+
+.social-links img:nth-child(1):hover {
+  transform: scale(1.5);
+  filter: invert();
+}
+.social-links img:nth-child(2):hover {
   transform: scale(1.5);
 }
-.social-links img:active{
+.social-links img:nth-child(3):hover {
+  transform: scale(1.5);
+}
+
+.social-links img:active {
   transform: scale(0.9);
   opacity: 0.8;
 }
@@ -268,7 +282,11 @@ nav ul li a:hover {
 @media only screen and (max-width: 700px) {
   nav ul {
     width: 100%;
-    background: linear-gradient(to right, var(--grad-one), var(--grad-two));
+    background: linear-gradient(
+      to right,
+      rgba(var(--grad-one-rgba), 0.1),
+      rgba(var(--grad-two-rgba), 0.1)
+    );
     position: absolute;
     top: 75px;
     right: 0;
@@ -336,14 +354,14 @@ nav ul li a:hover {
 }
 @keyframes breathing {
   0% {
-    transform: scale(1.03) ;
+    transform: scale(1.03);
   }
 
   50% {
-    transform: scale(0.98); 
-    }
+    transform: scale(0.98);
+  }
 
   100% {
-    transform: scale(1.03) ;
+    transform: scale(1.03);
   }
 }
